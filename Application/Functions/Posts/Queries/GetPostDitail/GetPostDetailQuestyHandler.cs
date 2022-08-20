@@ -19,10 +19,10 @@ public class GetPostDetailQuestyHandler : IRequestHandler<GetPostDetailQuery, Po
 
     public async Task<PostDetailViewModel> Handle(GetPostDetailQuery request, CancellationToken cancellationToken)
     {
-        var post = await this.postRepository.GetByIdAsync(request.Id);
-        var postDetail = this.mapper.Map<PostDetailViewModel>(post);
+        var all = await this.postRepository.GetByIdAsync(request.Id);
+        var postDetail = this.mapper.Map<PostDetailViewModel>(all);
 
-        var category = await this.categoryRepository.GetByIdAsync(post.CategoryId);
+        var category = await this.categoryRepository.GetByIdAsync(all.CategoryId);
         postDetail.Category = this.mapper.Map<CategoryDto>(category);
 
         return postDetail;

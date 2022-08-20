@@ -11,6 +11,6 @@ public class MappingProfiles : Profile
 	{
 		CreateMap<Post, PostViewModel>().ReverseMap();
 		CreateMap<Post, PostDetailViewModel>().ReverseMap();
-		CreateMap<Category, CategoryDto>().ReverseMap();
+		CreateMap<Category, CategoryDto>();
 	}
 }

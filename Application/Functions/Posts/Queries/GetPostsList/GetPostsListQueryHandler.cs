@@ -16,8 +16,8 @@ public class GetPostsListQueryHandler : IRequestHandler<GetPostsListQuery, List<
     }
     public async Task<List<PostViewModel>> Handle(GetPostsListQuery request, CancellationToken cancellationToken)
     {
-        var posts = await postRepository.GetAllAsync();
-        var orderedPosts = posts.OrderBy(post => post.Date);
+        var all = await postRepository.GetAllAsync();
+        var orderedPosts = all.OrderBy(post => post.Date);
 
         return mapper.Map<List<PostViewModel>>(orderedPosts);
     }

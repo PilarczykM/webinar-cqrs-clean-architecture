@@ -1,4 +1,4 @@
-﻿namespace Application.Functions.Categories.Queries.GetCategoriesList;
+﻿namespace Application.Functions.Categories.Queries.GetCategoryList;
 
 public class CategoryView
 {
