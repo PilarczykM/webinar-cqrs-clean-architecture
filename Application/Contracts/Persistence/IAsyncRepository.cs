@@ -4,7 +4,7 @@ public interface IAsyncRepository<T> where T : class
 {
     Task<T> GetByIdAsync(int id);
     Task<IReadOnlyList<T>> GetAllAsync();
-    Task<T> AddAsync();
-    Task DeleteAsync();
-    Task<T> UpdateAsync();
+    Task<T> AddAsync(T entity);
+    Task DeleteAsync(T entity);
+    Task<T> UpdateAsync(T entity);
 }
