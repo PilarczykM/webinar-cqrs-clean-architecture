@@ -21,7 +21,6 @@
     <Folder Include="Functions\Webinars\Commands\" />
     <Folder Include="Functions\Webinars\Queries\" />
     <Folder Include="Functions\Categories\Commands\" />
-    <Folder Include="Functions\Posts\Commands\CreatePost\" />
   </ItemGroup>
 
 </Project>
