@@ -23,7 +23,6 @@
   <ItemGroup>
     <Folder Include="Functions\Webinars\Commands\" />
     <Folder Include="Functions\Webinars\Queries\" />
-    <Folder Include="Functions\Categories\Commands\" />
   </ItemGroup>
 
 </Project>

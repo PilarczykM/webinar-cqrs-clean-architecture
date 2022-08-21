@@ -1,4 +1,5 @@
-﻿using Application.Functions.Categories.Queries.GetCategoryList;
+﻿using Application.Functions.Categories.Commands;
+using Application.Functions.Categories.Queries.GetCategoryList;
 using Application.Functions.Categories.Queries.GetCategoryListWithPosts;
 using Application.Functions.Posts.Commands.CreatePost;
 using Application.Functions.Posts.Commands.UpdatePost;
@@ -23,5 +24,7 @@ public class MappingProfiles : Profile
 
 		CreateMap<Post, CreatePostCommand>().ReverseMap();
 		CreateMap<Post, UpdatePostCommand>().ReverseMap();
+
+		CreateMap<Category, CreateCategoryCommand>().ReverseMap();
 	}
 }
