@@ -5,6 +5,8 @@ using Application.Functions.Posts.Commands.CreatePost;
 using Application.Functions.Posts.Commands.UpdatePost;
 using Application.Functions.Posts.Queries.GetPostDitail;
 using Application.Functions.Posts.Queries.GetPostsList;
+using Application.Functions.Webinars.Queries.GetWebinar;
+using Application.Functions.Webinars.Queries.GetWebinarListByDate;
 using AutoMapper;
 using Domain.Entities;
 
@@ -26,5 +28,8 @@ public class MappingProfiles : Profile
 		CreateMap<Post, UpdatePostCommand>().ReverseMap();
 
 		CreateMap<Category, CreateCategoryCommand>().ReverseMap();
+
+		CreateMap<Webinar, WebinarViewModel>().ReverseMap();
+		CreateMap<Webinar, WebinarsByDateViewModel>().ReverseMap();
 	}
 }
