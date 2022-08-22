@@ -34,7 +34,7 @@ public class DeletePostTest
 
         var allPostBefore = (await this._mockPostRepository.Object.GetAllAsync()).ToList();
 
-        var postToDeletion = allPostBefore[random.Next(allPostBefore.Count - 1)];
+        var postToDeletion = allPostBefore[random.Next(allPostBefore.Count)];
 
         var command = new DeletePostCommand() { PostId = postToDeletion.PostId };
 
