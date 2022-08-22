@@ -137,6 +137,44 @@ public class RepositoryMocks
 
         return p;
     }
+    public static Mock<IPostRepository> GetPostRepository()
+    {
+        var posts = GetPosts();
+        var mockpostRepository = new Mock<IPostRepository>();
+
+        mockpostRepository.Setup(repo => repo.GetAllAsync()).ReturnsAsync(posts);
+
+        mockpostRepository.Setup(repo => repo.GetByIdAsync(It.IsAny<int>())).ReturnsAsync(
+        (int id) =>
+        {
+            var pos = posts.FirstOrDefault(c => c.PostId == id);
+            return pos;
+        });
+
+        mockpostRepository.Setup(repo => repo.AddAsync(It.IsAny<Post>())).ReturnsAsync(
+        (Post post) =>
+        {
+            posts.Add(post);
+            return post;
+        });
+
+        mockpostRepository.Setup(repo => repo.DeleteAsync(It.IsAny<Post>())).Callback
+            <Post>((entity) => posts.Remove(entity));
+
+        mockpostRepository.Setup(repo => repo.UpdateAsync(It.IsAny<Post>())).Callback
+            <Post>((entity) => { posts.Remove(entity); posts.Add(entity); });
+
+        mockpostRepository.Setup(repo => repo.IsNameAndAuthorAlreadyExist
+            (It.IsAny<string>(), It.IsAny<string>()))
+            .ReturnsAsync((string title, string author) =>
+            {
+                var matches = posts.
+                Any(a => a.Title.Equals(title) && a.Author.Equals(author));
+                return matches;
+            });
+
+        return mockpostRepository;
+    }
     public static List<Post> GetPosts()
     {
         var cat = GetCategories();
