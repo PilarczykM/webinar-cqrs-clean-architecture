@@ -6,7 +6,7 @@ namespace Application;
 
 public static class ApplicationInstalation
 {
-    public static IServiceCollection addWebinarApplication(this IServiceCollection services)
+    public static IServiceCollection AddWebinarApplication(this IServiceCollection services)
     {
         services.AddAutoMapper(assemblies: Assembly.GetExecutingAssembly());
         services.AddMediatR(Assembly.GetExecutingAssembly());

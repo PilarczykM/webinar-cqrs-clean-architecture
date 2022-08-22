@@ -1,6 +1,6 @@
 ﻿using Domain.Entities;
 
-namespace InfrastructureWithEFRegistration.cs.DummyData;
+namespace InfrastructureWithEFRegistration.DummyData;
 
 public class DummyWebinars
 {

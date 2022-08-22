@@ -1,4 +1,4 @@
-﻿namespace InfrastructureWithEFRegistration.cs.DummyData;
+﻿namespace InfrastructureWithEFRegistration.DummyData;
 
 public class DummySeed
 {
