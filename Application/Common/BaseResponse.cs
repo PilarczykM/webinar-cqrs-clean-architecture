@@ -13,12 +13,14 @@ public class BaseResponse
     {
         ValidationErrors = new List<string>();
         Success = true;
+        Status = ResponseStatus.Success;
     }
     public BaseResponse(string? message = null)
     {
         ValidationErrors = new List<string>();
-        Success = true;
         Message = message;
+        Success = true;
+        Status = ResponseStatus.Success;
     }
 
     public BaseResponse(string message, bool success)
@@ -26,6 +28,7 @@ public class BaseResponse
         ValidationErrors = new List<string>();
         Success = success;
         Message = message;
+        Status = success ? ResponseStatus.Success : ResponseStatus.BadQuery;
     }
 
     public BaseResponse(ValidationResult validationResult)
@@ -36,6 +39,7 @@ public class BaseResponse
         {
             ValidationErrors.Add(item.ErrorMessage);
         }
+        Status = ResponseStatus.ValidationError;
     }
 }
 
