@@ -4,7 +4,7 @@ using MediatR;
 
 namespace Application.Functions.Categories.Queries.GetCategoryList;
 
-public class GetCategoryListQueryHandler : IRequestHandler<GetCategoyListQuery, List<CategoryView>>
+public class GetCategoryListQueryHandler : IRequestHandler<GetCategoryListQuery, List<CategoryView>>
 {
     private readonly IMapper mapper;
     private readonly ICategoryRepository categoryRepository;
@@ -14,7 +14,7 @@ public class GetCategoryListQueryHandler : IRequestHandler<GetCategoyListQuery, 
         this.mapper = mapper;
         this.categoryRepository = categoryRepository;
     }
-    public async Task<List<CategoryView>> Handle(GetCategoyListQuery request, CancellationToken cancellationToken)
+    public async Task<List<CategoryView>> Handle(GetCategoryListQuery request, CancellationToken cancellationToken)
     {
         var categories = await categoryRepository.GetAllAsync();
         var ordered = categories.OrderBy(category => category.Name);

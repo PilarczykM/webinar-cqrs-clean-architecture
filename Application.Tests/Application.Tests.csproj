@@ -28,10 +28,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Functions\Webinars\Commands\" />
     <Folder Include="Functions\Webinars\Queries\" />
-    <Folder Include="Functions\Categories\Commands\" />
-    <Folder Include="Functions\Categories\Queries\" />
     <Folder Include="Functions\Posts\Queries\" />
   </ItemGroup>
 

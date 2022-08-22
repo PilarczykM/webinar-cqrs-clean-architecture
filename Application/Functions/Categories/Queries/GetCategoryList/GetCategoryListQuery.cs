@@ -2,6 +2,6 @@
 
 namespace Application.Functions.Categories.Queries.GetCategoryList;
 
-public class GetCategoyListQuery : IRequest<List<CategoryView>>
+public class GetCategoryListQuery : IRequest<List<CategoryView>>
 {
 }

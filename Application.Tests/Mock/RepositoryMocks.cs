@@ -356,26 +356,6 @@ Zazwyczaj w tym cyklu pokazuje programy, z które moim bardzo zmieniają przepł
         mockWebinarRepository.Setup(repo => repo.UpdateAsync(It.IsAny<Webinar>())).Callback
             <Webinar>((entity) => { webinars.Remove(entity); webinars.Add(entity); });
 
-        mockWebinarRepository.Setup(repo => repo.GetPagedWebinarsForDate
-        (It.IsAny<SearchOptionsWebinars>(), It.IsAny<int>(), It.IsAny<int>(), It.IsAny<DateTime?>()))
-        .ReturnsAsync((DateTime date, int page, int pageSize) =>
-        {
-            var matches = webinars.Where(x => x.Date.Month == date.Month && x.Date.Year == date.Year)
-            .Skip((page - 1) * pageSize).Take(pageSize).ToList();
-
-            return matches;
-        });
-
-        mockWebinarRepository.Setup(repo => repo.GetTotalCountOfWebinarsForDate
-        (It.IsAny<SearchOptionsWebinars>(), It.IsAny<DateTime?>()))
-        .ReturnsAsync((DateTime date) =>
-        {
-            var matches = webinars.Count
-            (x => x.Date.Month == date.Month && x.Date.Year == date.Year);
-
-            return matches;
-        });
-
         return mockWebinarRepository;
     }
     public static List<Webinar> GetWebinars()

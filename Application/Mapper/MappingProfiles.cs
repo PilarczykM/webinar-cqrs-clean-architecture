@@ -32,6 +32,6 @@ public class MappingProfiles : Profile
 
 		CreateMap<Webinar, WebinarViewModel>().ReverseMap();
 		CreateMap<Webinar, WebinarsByDateViewModel>().ReverseMap();
-		CreateMap<Webinar, CreateWebinarCommand>();
+		CreateMap<Webinar, CreateWebinarCommand>().ReverseMap();
 	}
 }
