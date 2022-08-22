@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
@@ -32,7 +32,6 @@
     <Folder Include="Functions\Webinars\Queries\" />
     <Folder Include="Functions\Categories\Commands\" />
     <Folder Include="Functions\Categories\Queries\" />
-    <Folder Include="Functions\Posts\Commands\" />
     <Folder Include="Functions\Posts\Queries\" />
   </ItemGroup>
 
